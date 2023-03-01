@@ -1,8 +1,8 @@
 const Todo = require('../models/todo');
 
-exports.getAllTodo = (req, res) => {
+exports.getAllTodo = async (req, res) => {
     try{
-        const todo = Todo.find();
+        const todo = await Todo.find();
 
         res.status(200).json({
             status: 'success',
@@ -18,11 +18,11 @@ exports.getAllTodo = (req, res) => {
     }
 }
 
-exports.postTodo = (req, res) => {
+exports.postTodo = async (req, res) => {
     try{
-        const todo = Todo.create(req.body);
+        const todo = await Todo.create(req.body);
 
-        res.status(200).json({
+        res.status(201).json({
             status: 'success',
             message: 'data created',
             data: {
@@ -37,9 +37,9 @@ exports.postTodo = (req, res) => {
     }
 }
 
-exports.updateTodo = (req, res) => {
+exports.updateTodo = async (req, res) => {
     try{
-        const todo = Tour.findByIdAndUpdate(req.params.id, req.body);
+        const todo = await Todo.findByIdAndUpdate(req.params.id, req.body);
 
         res.status(200).json({
             status: 'success',
@@ -56,11 +56,11 @@ exports.updateTodo = (req, res) => {
     }
 }
 
-exports.deleteTodo = (req, res) => {
+exports.deleteTodo = async (req, res) => {
     try{
-        const todo = Todo.findByIdAndRemove(req.params.id, req.body);
+        const todo = await Todo.findByIdAndRemove(req.params.id, req.body);
 
-        res.status(202).json({
+        res.status(204).json({
             status: 'success',
             message: 'data deleted',
             data: {

@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const TodoSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: true,
+        required: [true, 'Todo must a title'],
+        unique: [true, 'Todo must by unique'],
     },
     description: {
         type: String,
