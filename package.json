@@ -14,7 +14,9 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^7.0.0"
+    "mongoose": "^7.0.0",
+    "node": "18.14",
+    "nvm": "^0.0.4"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

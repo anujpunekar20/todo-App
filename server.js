@@ -6,6 +6,7 @@ require('dotenv').config();
 const app = express();
 
 const route = require('./routes/routes');
+const { default: mongoose } = require('mongoose');
 
 app.use(morgan('dev'));
 
@@ -25,8 +26,9 @@ app.get('/', (req, res) => {
 app.use('/api/todo', route);
 
 // port setup
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, '127.0.0.1', () => { 
     console.log(`Server listening or port ${PORT}`);
+    // console.log(process.env)
 });
