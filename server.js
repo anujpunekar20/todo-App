@@ -28,7 +28,7 @@ app.use('/api/todo', route);
 // port setup
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, '127.0.0.1', () => { 
+app.listen(PORT, () => { 
     console.log(`Server listening or port ${PORT}`);
     // console.log(process.env)
 });
